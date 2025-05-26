@@ -1,0 +1,241 @@
+@mixin mediaTablet {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mediaLaptop {
+  @media screen and (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin mediaDesktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin font_logo {
+  font-family: $epilogue_italic;
+  font-size: 42px;
+  font-weight: 600;
+  mix-blend-mode: difference;
+  user-select: none;
+
+  @include mediaLaptop {
+    font-size: 54px;
+  }
+}
+
+@mixin font_error {
+  font-family: $noto_sans;
+  font-size: 12px;
+  font-weight: 300;
+  color: $main_error;
+}
+
+@mixin font_input {
+  font-family: $noto_sans;
+  font-size: 16px;
+  font-weight: 300;
+  color: $main_font;
+}
+
+@mixin font_button_small {
+  font-family: $noto_sans;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+  user-select: none;
+
+  @include mediaTablet {
+    font-size: 14px;
+  }
+}
+
+@mixin font_button_medium {
+  font-family: $noto_sans;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  user-select: none;
+
+  @include mediaTablet {
+    font-size: 16px;
+  }
+}
+
+@mixin font_button_large {
+  font-family: $noto_sans;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  user-select: none;
+
+  @include mediaTablet {
+    font-size: 20px;
+  }
+}
+
+@mixin font_notosans_12_300 {
+  font-family: $noto_sans;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+@mixin font_notosans_14_300 {
+  font-family: $noto_sans;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+@mixin font_notosans_16_300 {
+  font-family: $noto_sans;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@mixin font_notosans_16_400 {
+  font-family: $noto_sans;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@mixin font_notosans_18_300 {
+  font-family: $noto_sans;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+@mixin font_notosans_18_400 {
+  font-family: $noto_sans;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@mixin font_notosans_20_300 {
+  font-family: $noto_sans;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@mixin font_notosans_22_300 {
+  font-family: $noto_sans;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+@mixin font_notosans_24_300 {
+  font-family: $noto_sans;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+@mixin font_epilogue_24_600 {
+  font-family: $epilogue;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@mixin font_epilogue_36_800 {
+  font-family: $epilogue;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+@mixin font_epilogue_48_800 {
+  font-family: $epilogue;
+  font-size: 48px;
+  font-weight: 800;
+}
+
+@mixin font_epilogue_48_900 {
+  font-family: $epilogue;
+  font-size: 48px;
+  font-weight: 900;
+}
+
+@mixin font_epilogue_66_900 {
+  font-family: $epilogue;
+  font-size: 66px;
+  font-weight: 900;
+}
+
+@mixin font_epilogue_80_900 {
+  font-family: $epilogue;
+  font-size: 80px;
+  font-weight: 900;
+}
+
+@mixin font_epilogue_100_900 {
+  font-family: $epilogue;
+  font-size: 100px;
+  font-weight: 900;
+}
+
+@mixin font_epilogue_124_900 {
+  font-family: $epilogue;
+  font-size: 124px;
+  font-weight: 900;
+}
+
+@mixin font_epilogue_132_900 {
+  font-family: $epilogue;
+  font-size: 132px;
+  font-weight: 900;
+}
+
+@mixin font_epilogue_italic_16_500 {
+  font-family: $epilogue_italic;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@mixin font_epilogue_italic_24_600 {
+  font-family: $epilogue_italic;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@mixin font_epilogue_italic_28_800 {
+  font-family: $epilogue_italic;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+@mixin font_epilogue_italic_32_800 {
+  font-family: $epilogue_italic;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+@mixin font_epilogue_italic_36_800 {
+  font-family: $epilogue_italic;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+@mixin font_epilogue_italic_44_800 {
+  font-family: $epilogue_italic;
+  font-size: 44px;
+  font-weight: 800;
+}
+
+@mixin font_epilogue_italic_48_800 {
+  font-family: $epilogue_italic;
+  font-size: 48px;
+  font-weight: 800;
+}
+
+@mixin font_epilogue_italic_66_900 {
+  font-family: $epilogue_italic;
+  font-size: 66px;
+  font-weight: 900;
+}
+
+@mixin font_epilogue_italic_80_900 {
+  font-family: $epilogue_italic;
+  font-size: 80px;
+  font-weight: 900;
+}
