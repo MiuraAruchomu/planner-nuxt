@@ -22,7 +22,7 @@ const { isHabitsLoading, dailyHabits } = storeToRefs(habitsStore);
   flex-direction: column;
   width: 100%;
   margin-top: 65px;
-  padding-bottom: 15dvh;
+  padding-bottom: calc(60.5px + 6dvh);
   gap: 10px;
 
   @include mediaTablet {
