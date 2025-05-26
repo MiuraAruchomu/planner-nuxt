@@ -63,8 +63,10 @@ button:focus {
   outline: none;
 }
 
-.container {
+.page-container {
+  height: 100dvh;
   padding: 0 15px;
+  overflow: hidden;
 
   @include mediaTablet {
     padding: 0 20px;
@@ -72,17 +74,6 @@ button:focus {
 
   @include mediaLaptop {
     padding: 0 40px;
-  }
-}
-
-.page-container {
-  padding-top: 65px;
-  height: calc(100vh - 65px);
-  overflow-y: auto;
-
-  @include mediaTablet {
-    padding-top: 96px;
-    height: calc(100vh - 96px);
   }
 }
 
