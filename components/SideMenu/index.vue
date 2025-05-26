@@ -12,9 +12,7 @@ const { isVisible } = storeToRefs(sidemenuStore);
 <style lang="scss" scoped>
 .side-menu {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -100%;
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -23,11 +21,12 @@ const { isVisible } = storeToRefs(sidemenuStore);
   height: 100dvh;
   background: $main_green;
   border-radius: 0 50px 50px 0;
-  transition: left 0.7s ease-in;
+  transform: translateX(-100%);
+  transition: transform 0.7s ease-in;
   z-index: 2;
 
   &.visible {
-    left: 0;
+    transform: translateX(0);
   }
 }
 </style>

@@ -53,6 +53,7 @@ const { isVisible } = storeToRefs(sidemenuStore);
     -webkit-text-fill-color: transparent;
     opacity: 0;
     transform: translateY(-110%);
+    will-change: transform, opacity;
 
     @include font_epilogue_48_800;
 
