@@ -80,33 +80,6 @@ const { items, isVisible } = storeToRefs(sidemenuStore);
   }
 }
 
-.designed-dev-by {
-  position: absolute;
-  bottom: 7dvh;
-  width: 100%;
-  overflow: hidden;
-
-  span {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    color: $main_poisonous;
-    text-transform: uppercase;
-    opacity: 0;
-    transform: translateY(-110%);
-    transition:
-      opacity 0.7s ease-in,
-      transform 0.5s ease-in-out 0.7s;
-
-    @include font_epilogue_italic_16_500;
-
-    &.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
 .list-item_authentication {
   display: block;
   user-select: none;
@@ -143,6 +116,7 @@ const { items, isVisible } = storeToRefs(sidemenuStore);
     -webkit-text-fill-color: transparent;
     opacity: 0;
     transform: translateY(-110%);
+    will-change: transform, opacity;
 
     @include font_epilogue_italic_32_800;
 
@@ -155,6 +129,34 @@ const { items, isVisible } = storeToRefs(sidemenuStore);
         background-position: 0;
       }
     }
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.designed-dev-by {
+  position: absolute;
+  bottom: 7dvh;
+  width: 100%;
+  overflow: hidden;
+
+  span {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: $main_poisonous;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-110%);
+    transition:
+      opacity 0.7s ease-in,
+      transform 0.5s ease-in-out 0.7s;
+    will-change: transform, opacity;
+
+    @include font_epilogue_italic_16_500;
 
     &.visible {
       opacity: 1;
