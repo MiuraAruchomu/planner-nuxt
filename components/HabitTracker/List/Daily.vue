@@ -1,5 +1,8 @@
 <script setup>
+const dateStore = useDateStore();
 const habitsStore = useHabitsStore();
+
+const { selectedDate } = storeToRefs(dateStore);
 const { isHabitsLoading, dailyHabits, habits } = storeToRefs(habitsStore);
 </script>
 
@@ -8,6 +11,7 @@ const { isHabitsLoading, dailyHabits, habits } = storeToRefs(habitsStore);
   <ul
     v-else-if="dailyHabits.length > 0 && !isHabitsLoading"
     class="habit-tracker-list"
+    :key="selectedDate"
   >
     <li v-for="habit in dailyHabits" :key="habit.id">
       <HabitTrackerBlockDaily :id="habit.id" :name="habit.name" />
