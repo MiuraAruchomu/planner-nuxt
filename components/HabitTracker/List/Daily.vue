@@ -1,6 +1,6 @@
 <script setup>
 const habitsStore = useHabitsStore();
-const { isHabitsLoading, dailyHabits } = storeToRefs(habitsStore);
+const { isHabitsLoading, dailyHabits, habits } = storeToRefs(habitsStore);
 </script>
 
 <template>
@@ -13,6 +13,9 @@ const { isHabitsLoading, dailyHabits } = storeToRefs(habitsStore);
       <HabitTrackerBlockDaily :id="habit.id" :name="habit.name" />
     </li>
   </ul>
+  <HabitTrackerLooksLike
+    v-else-if="!dailyHabits.length && habits.length && !isHabitsLoading"
+  />
   <HabitTrackerOops v-else-if="!isHabitsLoading" />
 </template>
 
