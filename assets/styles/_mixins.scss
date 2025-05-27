@@ -144,16 +144,16 @@
   font-weight: 800;
 }
 
+@mixin font_epilogue_40_900 {
+  font-family: $epilogue;
+  font-size: 40px;
+  font-weight: 900;
+}
+
 @mixin font_epilogue_48_800 {
   font-family: $epilogue;
   font-size: 48px;
   font-weight: 800;
-}
-
-@mixin font_epilogue_48_900 {
-  font-family: $epilogue;
-  font-size: 48px;
-  font-weight: 900;
 }
 
 @mixin font_epilogue_66_900 {

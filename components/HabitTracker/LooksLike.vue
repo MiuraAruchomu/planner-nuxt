@@ -1,51 +1,35 @@
 <script setup>
 const firstLinePhrase = [
-  'Oops!',
   'Looks',
   'like',
-  'you',
-  'don’t',
-  'have',
-  'any',
-  'habits',
-  'yet.',
+  'today’s',
+  'habit',
+  'list',
+  'is',
+  'empty.',
 ];
-const secondLinePhrase = [
-  'How',
-  'about',
-  'starting',
-  'a new',
-  'one?',
-  'Your',
-  'future',
-  'self',
-  'will',
-  'thank',
-  'you!',
-];
+const secondLinePhrase = ['Perfect', 'chance', 'to try', 'something', 'fresh!'];
 </script>
 
 <template>
-  <div class="oops">
-    <div class="oops__inner">
-      <ul class="oops__first-line">
+  <div class="looks-like">
+    <div class="looks-like__inner">
+      <ul class="looks-like__first-line">
         <li
           v-for="(word, index) in firstLinePhrase"
           :key="word + index"
-          class="oops__item"
+          class="looks-like__item"
         >
           <span :data-text="word">{{ word }}</span>
         </li>
       </ul>
-      <ul class="oops__second-line">
+      <ul class="looks-like__second-line">
         <li
           v-for="(word, index) in secondLinePhrase"
           :key="index + word"
-          class="oops__item"
+          class="looks-like__item"
         >
-          <span :data-text="word" :class="{ awesome: word === 'awesome' }">{{
-            word
-          }}</span>
+          <span :data-text="word">{{ word }}</span>
         </li>
       </ul>
     </div>
@@ -53,7 +37,7 @@ const secondLinePhrase = [
 </template>
 
 <style lang="scss" scoped>
-.oops {
+.looks-like {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +102,7 @@ const secondLinePhrase = [
   &__first-line &__item {
     color: $main_green_light;
 
-    @include font_epilogue_48_900;
+    @include font_epilogue_40_900;
 
     @include mediaTablet {
       @include font_epilogue_66_900;
