@@ -1,5 +1,8 @@
 <script setup>
+const dateStore = useDateStore();
 const habitsStore = useHabitsStore();
+
+const { selectedWeekDates } = storeToRefs(dateStore);
 const { isHabitsLoading, habits } = storeToRefs(habitsStore);
 </script>
 
@@ -8,6 +11,7 @@ const { isHabitsLoading, habits } = storeToRefs(habitsStore);
   <ul
     v-else-if="habits.length > 0 && !isHabitsLoading"
     class="habit-tracker-list"
+    :key="selectedWeekDates?.join(',')"
   >
     <li v-for="habit in habits" :key="habit.id">
       <HabitTrackerBlockWeekly
