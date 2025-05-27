@@ -26,6 +26,7 @@ export const useHabitsStore = defineStore('habits-store', () => {
   const dateStore = useDateStore();
   const { currentDate, selectedDate, selectedWeekDates } =
     storeToRefs(dateStore);
+  const isFirstHabitsLoading = ref<boolean>(true);
   const isHabitsLoading = ref<boolean>(true);
   const habits = ref<Habit[]>([]);
   const habitDataToRemove = reactive<HabitDataToRemove>({
@@ -106,7 +107,9 @@ export const useHabitsStore = defineStore('habits-store', () => {
       );
 
       try {
-        isHabitsLoading.value = true;
+        if (isFirstHabitsLoading.value) {
+          isHabitsLoading.value = true;
+        }
         const snapshot = await get(dbRef);
         habits.value = Object.values(snapshot.val() || []);
       } catch (err) {
@@ -114,7 +117,10 @@ export const useHabitsStore = defineStore('habits-store', () => {
           throw new Error(err.message);
         }
       } finally {
-        isHabitsLoading.value = false;
+        if (isFirstHabitsLoading.value) {
+          isHabitsLoading.value = false;
+          isFirstHabitsLoading.value = false;
+        }
       }
     }
   }
