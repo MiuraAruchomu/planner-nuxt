@@ -60,6 +60,7 @@ const activeIndex = computed(() => {
     background: $main_poisonous;
     border-radius: 50px;
     transition: transform 0.2s ease-in;
+    will-change: transform;
   }
 
   &__item {
