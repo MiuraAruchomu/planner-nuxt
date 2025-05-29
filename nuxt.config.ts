@@ -4,9 +4,23 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   app: {
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          href: '/icons/planner-large.png',
+          type: 'image/x-icon',
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/icons/planner.png',
+          sizes: '180x180',
+        },
+      ],
+    },
     pageTransition: { name: 'page', mode: 'out-in' },
   },
-  css: ['~/assets/styles/main.scss'],
+  css: ['@/assets/styles/main.scss'],
   modules: ['@pinia/nuxt', 'nuxt-vuefire', '@nuxt/icon'],
   pinia: {
     storesDirs: ['./stores/**'],
