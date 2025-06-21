@@ -57,8 +57,8 @@ const { isVisible } = storeToRefs(sidemenuStore);
       @include font_epilogue_italic_44_800;
     }
 
-    @include mediaLaptop {
-      &:hover {
+    &:hover {
+      @include mediaLaptop {
         background-position: 0;
       }
     }
