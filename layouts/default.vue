@@ -10,6 +10,7 @@ onMounted(() => {
 
 <template>
   <Header />
+  <SideMenu />
   <Modal />
   <slot />
 </template>

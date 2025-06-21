@@ -21,8 +21,3 @@ export interface ToggleHabitCompletionProps {
   date: string;
   isCompleted: boolean;
 }
-
-// Sidemenu
-export type SideMenuItem = {
-  path: string;
-};
