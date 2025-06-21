@@ -1,6 +1,5 @@
 <template>
   <header>
-    <SideMenu />
     <UiLogo />
     <BurgerMenu />
   </header>

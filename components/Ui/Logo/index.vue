@@ -2,15 +2,13 @@
 const sideMenuStore = useSidemenuStore();
 const { isVisible } = storeToRefs(sideMenuStore);
 
-const closeSideMenu = () => {
-  if (isVisible) {
-    sideMenuStore.closeMenu();
-  }
+const handleCloseMenu = () => {
+  isVisible.value && sideMenuStore.toggleVisible();
 };
 </script>
 
 <template>
-  <NuxtLink to="/" @click="closeSideMenu">
+  <NuxtLink to="/" @click="handleCloseMenu">
     <h1 class="logo">planner</h1>
   </NuxtLink>
 </template>
