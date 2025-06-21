@@ -21,7 +21,7 @@
 ```bash
 # Клонировать репозиторий
 git clone https://github.com/MiuraAruchomu/planner-nuxt
-cd planner
+cd planner-nuxt
 
 # Установить зависимости
 yarn install
