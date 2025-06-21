@@ -1,11 +1,19 @@
 <script setup>
+const authStore = useAuthStore();
 const sidemenuStore = useSidemenuStore();
+
+const { user } = storeToRefs(authStore);
 const { isVisible } = storeToRefs(sidemenuStore);
 </script>
 
 <template>
   <div class="side-menu" :class="{ visible: isVisible }">
-    <SideMenuList />
+    <SideMenuAuthorizedList v-if="user" />
+    <SideMenuUnauthorizedList v-else />
+
+    <div class="designed-dev-by">
+      <span :class="{ visible: isVisible }">designed/dev by miuraAruchomu</span>
+    </div>
   </div>
 </template>
 
@@ -27,6 +35,34 @@ const { isVisible } = storeToRefs(sidemenuStore);
 
   &.visible {
     transform: translateX(0);
+  }
+}
+
+.designed-dev-by {
+  position: absolute;
+  bottom: 7dvh;
+  width: 100%;
+  overflow: hidden;
+
+  span {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: $main_poisonous;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-110%);
+    transition:
+      opacity 0.7s ease-in,
+      transform 0.5s ease-in-out 0.7s;
+    will-change: transform, opacity;
+
+    @include font_epilogue_italic_16_500;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 </style>
