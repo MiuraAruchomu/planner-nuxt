@@ -11,7 +11,7 @@ export interface SideMenuItems {
 }
 
 export interface UnauthorizedListItemProps {
-  name: string;
+  name: SideMenuUnauthorizedItem;
 }
 
 export interface AuthorizedListItemProps extends UnauthorizedListItemProps {
