@@ -1,11 +1,13 @@
-export interface SideMenuItem {
+import type { SideMenuUnauthorizedItem } from './SideMenu.type';
+
+export interface SideMenuAuthorizedItem {
   name: string;
   path: string;
 }
 
-export interface SideMenuConfig {
-  AUTHORIZED: Record<string, SideMenuItem>;
-  UNAUTHORIZED: string[];
+export interface SideMenuItems {
+  AUTHORIZED: Record<string, SideMenuAuthorizedItem>;
+  UNAUTHORIZED: SideMenuUnauthorizedItem[];
 }
 
 export interface UnauthorizedListItemProps {

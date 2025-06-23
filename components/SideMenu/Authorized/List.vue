@@ -1,11 +1,11 @@
 <script setup>
-import { SIDEMENU } from '../SideMenu.config';
+import { SIDEMENU_ITEMS } from '../SideMenu.config';
 </script>
 
 <template>
   <ul class="side-menu-list">
     <li
-      v-for="(value, key, index) in SIDEMENU.AUTHORIZED"
+      v-for="(value, key, index) in SIDEMENU_ITEMS.AUTHORIZED"
       :key="key"
       class="side-menu-list__item"
     >
