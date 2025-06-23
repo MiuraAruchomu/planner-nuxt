@@ -1,6 +1,7 @@
-import type { SideMenuConfig } from './SideMenu.interface';
+import type { SideMenuItems } from './SideMenu.interface';
+import type { TransitionTimingsItem } from './SideMenu.type';
 
-export const SIDEMENU: SideMenuConfig = {
+export const SIDEMENU_ITEMS: SideMenuItems = {
   AUTHORIZED: {
     CALENDAR: {
       name: 'calendar',
@@ -22,7 +23,7 @@ export const SIDEMENU: SideMenuConfig = {
   UNAUTHORIZED: ['sign in', 'sign up'],
 };
 
-export const TRANSITION_TIMINGS: Record<string, number> = {
+export const TRANSITION_TIMINGS: Record<TransitionTimingsItem, number> = {
   'sign in': 0.65,
   'sign up': 0.675,
   'sign out': 0.675,
